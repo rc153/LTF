@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{92A92AAA-6837-4FF0-8A52-70A83C4F451C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Toolkit</RootNamespace>
+    <AssemblyName>Toolkit</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <IntermediateOutputPath>C:\Users\Lolo\AppData\Local\Temp\vsB0FF.tmp\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>C:\Users\Lolo\AppData\Local\Temp\vsB0FF.tmp\Release\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\packages\Microsoft.Bcl.Immutable.1.0.5-beta\lib\net45\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Validation">
+      <HintPath>..\packages\Validation.2.0.0.12319\lib\portable-windows8+net40+sl5+windowsphone8\Validation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Book\Instrument.Position.cs" />
+    <Compile Include="Book\Instrument.Feed.cs" />
+    <Compile Include="Book\Instrument.cs" />
+    <Compile Include="Book\InstrumentCollection.cs" />
+    <Compile Include="Book\IndexUniverse.cs" />
+    <Compile Include="Configuration\BaseConfiguration.cs" />
+    <Compile Include="Configuration\InstrumentsConfiguration.cs" />
+    <Compile Include="FixedPointDecimal.cs" />
+    <Compile Include="Core\HiResDateTime.cs" />
+    <Compile Include="Core\Simple\SimpleEnvironment.cs" />
+    <Compile Include="FSM\EventFSM.cs" />
+    <Compile Include="Ids\BaseIdService.cs" />
+    <Compile Include="Ids\CsvIdService.cs" />
+    <Compile Include="Ids\IdUtils.cs" />
+    <Compile Include="Ids\ISIN.cs" />
+    <Compile Include="Ids\SymbolType.cs" />
+    <Compile Include="Index\IndexComputer.cs" />
+    <Compile Include="Indicators\Coint.cs" />
+    <Compile Include="Indicators\ExpGrowth.cs" />
+    <Compile Include="Indicators\Speed.cs" />
+    <Compile Include="MarketData\Backend\IMDBackend.cs" />
+    <Compile Include="MarketData\IQuoteModel.cs" />
+    <Compile Include="MarketData\ITradeModel.cs" />
+    <Compile Include="Output\GUI\GUI.cs" />
+    <Compile Include="Output\Log\LogWriter.cs" />
+    <Compile Include="Output\OutputPayload.cs" />
+    <Compile Include="Output\Perf\RateSensor.cs" />
+    <Compile Include="Risk\SignalToPosition.cs" />
+    <Compile Include="Stats\Kalman.cs" />
+    <Compile Include="Threading\CacheLinePadding.cs" />
+    <Compile Include="Threading\RecyclerDisruptor.cs" />
+    <Compile Include="Threading\RecyclerDynamic.cs" />
+    <Compile Include="Threading\SimpleDisruptorContainer.cs" />
+    <Compile Include="Threading\SimpleDisruptor.cs" />
+    <Compile Include="Stats\EwmaComputer.cs" />
+    <Compile Include="Indicators\Interfaces.cs" />
+    <Compile Include="Indicators\IndicatorBase.cs" />
+    <Compile Include="Indicators\IndicatorFactory.cs" />
+    <Compile Include="Indicators\Vol.cs" />
+    <Compile Include="IO\Protobuf.cs" />
+    <Compile Include="IO\Utils.cs" />
+    <Compile Include="IO\Varint.cs" />
+    <Compile Include="MarketData\IFeed.cs" />
+    <Compile Include="Output\Output.cs" />
+    <Compile Include="Output\Log\LogContext.cs" />
+    <Compile Include="Output\Log\Logger.cs" />
+    <Compile Include="MarketData\Backend\ArchiveMDBackend.cs" />
+    <Compile Include="MarketData\Backend\DirectoryMDBackend.cs" />
+    <Compile Include="MarketData\SimpleQuote\SimpleMDPlugin.cs" />
+    <Compile Include="MarketData\SimpleQuote\SimpleMDInstrument.cs" />
+    <Compile Include="MarketData\UpdateType.cs" />
+    <Compile Include="IO\CompactBinaryReader.cs" />
+    <Compile Include="Core\IScheduler.cs" />
+    <Compile Include="IO\LZF.cs" />
+    <Compile Include="MarketData\SimpleQuote\SimpleMDQuoteUpdate.cs" />
+    <Compile Include="Ids\DummyIdService.cs" />
+    <Compile Include="Core\IEnvironment.cs" />
+    <Compile Include="Ids\Id.cs" />
+    <Compile Include="Core\IService.cs" />
+    <Compile Include="MarketData\MarketSide.cs" />
+    <Compile Include="MarketData\SimpleQuote\SimpleMDQuoteModel.cs" />
+    <Compile Include="Core\Simulation\SimulationRunner.cs" />
+    <Compile Include="Core\Simulation\SimulationScheduler.cs" />
+    <Compile Include="Stats\GridComputer.cs" />
+    <Compile Include="Trading\OMS.cs" />
+    <Compile Include="Trading\Order.cs" />
+    <Compile Include="Trading\OrderBook.cs" />
+    <Compile Include="Position\IPositionModel.cs" />
+    <Compile Include="Position\PMS.cs" />
+    <Compile Include="Output\Perf\DurationSensor.cs" />
+    <Compile Include="Plugins\PluginLoader.cs" />
+    <Compile Include="IO\CompactBinaryWriter.cs" />
+    <Compile Include="Plugins\IPlugin.cs" />
+    <Compile Include="MarketData\MDPluginBase.cs" />
+    <Compile Include="Core\Simulation\SimulationEnvironment.cs" />
+    <Compile Include="Configuration\SubSetConfiguration.cs" />
+    <Compile Include="Configuration\FileConfiguration.cs" />
+    <Compile Include="Configuration\IConfiguration.cs" />
+    <Compile Include="Position\HitComputer.cs" />
+    <Compile Include="Book\IBook.cs" />
+    <Compile Include="Book\IndexBook.cs" />
+    <Compile Include="Position\PnLComputer.cs" />
+    <Compile Include="Book\SimpleBook.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stats\Filters.cs" />
+    <Compile Include="Stats\Online.cs" />
+    <Compile Include="Stats\Offline.cs" />
+    <Compile Include="Stats\R.cs" />
+    <Compile Include="TickSize\FixedTickSize.cs" />
+    <Compile Include="TickSize\ITickSize.cs" />
+    <Compile Include="TickSize\RuleTickSize.cs" />
+    <Compile Include="Utils\Arrays.cs" />
+    <Compile Include="Utils\Collections.cs" />
+    <Compile Include="Utils\Constants.cs" />
+    <Compile Include="Utils\MTU.cs" />
+    <Compile Include="Utils\SingleValueEnumerator.cs" />
+    <Compile Include="Utils\Windows.cs" />
+    <Compile Include="Utils\WrappedArray.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Atomic\Atomic.csproj">
+      <Project>{bdb4336e-54f2-475d-8193-b730c522261f}</Project>
+      <Name>Atomic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Disruptor\Disruptor.csproj">
+      <Project>{37fbdbe1-8524-4489-b082-cc109b0f5ea3}</Project>
+      <Name>Disruptor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Numerics\Numerics.csproj">
+      <Project>{b7cae5f4-a23f-4438-b5be-41226618b695}</Project>
+      <Name>Numerics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharpCompress\SharpCompress.csproj">
+      <Project>{10a689cf-76a2-4a4f-96e4-553c33398438}</Project>
+      <Name>SharpCompress</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="key.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="..\Common.csproj" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
